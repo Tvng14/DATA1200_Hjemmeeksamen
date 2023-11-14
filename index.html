@@ -1,0 +1,83 @@
+
+<!-- Theme: OsloMet Campus in general or Pilestredet 35 in particular. index.html 
+    should have a general introduction with at least one relevant image -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DATA1200 Eksamen - introduksjon">
+    <!-- Favicon av OsloMet, Company: OsloMet, Kilde:https://ansatt.oslomet.no/logo-visuell-profil -->
+    <link rel="icon" type="image/png" href="/images/OsloMet_favicon.png">
+    <title>Eksamen</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a href="#">Eksamen</a>
+        <!-- Mobil icon (vises kun når under 768px) -->
+        <button id="nav-icon" onclick="endreVisning()"><span></span><span></span><span></span></button>
+        <div class="list" id="navbar">
+            <ul>
+                <li><a class="active" href="#">Hjem</a></li>
+                <li><a href="pages/accessibility.html">Tilgjengelighet</a></li>
+                <li><a href="pages/topical.html">Topical</a></li>
+                <li><a href="pages/campus.html">Campus</a></li>
+            </ul>
+        <div>
+    </nav>
+    <!--Forside bilde med tekst -->
+    <!-- Foto: https://www.eurosign.no/prosjekter/oslomet -->
+    <div class="front" id="front">
+        <h1>Velkommen til OsloMet!</h1>
+        <!-- Klikk for å komme til content action -->
+        <a href="#content" class="mouse">Scroll</a>
+    </div> 
+    <div class="fullcontent" id="content">
+        <!-- Innhold -->
+        <div class="content kolonne">
+            <!-- Første rad -->
+            <div class="center rad">
+                <div class="left kolonne">
+                    <h2>Hvem er vi?</h2>
+                    <p>
+                        Hei og velkommen til nettsiden vår! Vi er fem studenter som går på OsloMet,
+                        første året på informasjonsteknologi 2023. Dette er vår eksamensbesvarelse, og 
+                        her ble vi bedt om å lage en nettside med ulikt innhold hvor vi utforsker
+                        vår kreativitet. Dette er vår intro side, og det skal være lett å navigere seg gjennom nettsiden
+                        med navigasjonsbaren fiksert på toppen. Vi håper dere liker nettsiden vår! 
+                    </p>
+                </div>
+                <!-- Bilde av P32, Foto: Benjamin A. Ward, 
+                    Kilde: https://student.oslomet.no/hva-skjer/-/hva-skjer/velkomstmote-for-internasjonale-studenter-varsemester-2024 -->
+                <img class="forsidebilde" src="images/P32_OsloMet_Benjamin_Ward.jpeg" alt="P32 fasade">
+            </div>
+            <!-- Andre rad -->
+            <div class="center rad">
+                <div class="left kolonne">
+                    <h2>Hva er OsloMet?</h2>
+                    <p>
+                        Oslomet er ikke kun det universitetet der studiene bare er en reise gjennom bøker, 
+                        men en utforsking av intellektuell nysgjerrighet og kreativitet! På Oslomet 
+                        dyrker vi ikke bare fremtidige ledere, vi former visjonære tenkere. 
+                        Fra dyptgående forelesninger til spennede arrangementer tilbyr vi et 
+                        mangfold av læringsmuligheter pakket med både substans og engasjement. 
+                        Utforsk grensene av kunnskap og oppdag hvordan læring kan være en meningsfull opplevelse.
+                        Velkommen til Oslomet, hvor kunnskap og eventyr møtes!
+                    </p>
+                    <!-- Knapp for å gå til campus siden-->
+                    <a class="btn" href="pages/campus.html">Besøk campusen vår!</a>
+                </div>
+                <!-- Bilde på høyre side av 3 jenter, Foto: Benjamin A. Ward/OsloMet, Kilder:https://ansatt.oslomet.no/siste-nytt/-/nyhet/vi-trenger-a-hore-til-lagplass -->
+                <img class="forsidebilde" src="images/Oslomet_tre_jenter.png" alt="Bilde av tre jenter på OsloMet">
+            </div>
+        </div>
+    </div>
+</div> 
+    <footer>
+        <div>Lenyg7535 | Dapha0157 | Sasel4433 | Tungu2400 | Chtra2129 | © 2023 Hjemme-eksamen</div>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

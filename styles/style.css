@@ -1,0 +1,577 @@
+/* Globale CSS tags */
+
+/* Fjerne whitelines og legge til font */
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	scroll-behavior: smooth;
+	line-height: 1.5;
+}
+/* Vi har brukt "em" til font-size for å gjøre
+	tekststørrelsen skalerbar. */
+h1 {
+	font-size: 3.125em;
+	font-weight: 600;
+}
+
+h2 {
+	font-size: 1.875em;
+	font-weight: 600;
+}
+
+p {
+	font-size: 1.25em;
+	font-weight: 400;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+}
+
+/* Inneholde informasjonen som vises nederst på siden.*/
+footer {
+	background-color: #2F3D7C;
+	color: white;
+	height: 80px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	word-spacing: 10px;
+	margin-top: 80px; /* Lager mellomrom fra hovedinnholdet til footer */
+}
+
+/* Navbar */
+nav {
+	position: fixed;
+	background-color: #2F3D7C;
+	top: 0;
+	height: 80px;
+	width: 100%;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	& > a {
+		text-decoration: none;
+		color: white;
+		font-size: 1.875em;
+		font-weight: 600;
+		text-transform: uppercase;
+
+		&:hover {
+			color: #ffd500;
+		}
+	}
+}
+/* Navbar liste */
+.list {
+	width: 72.5%;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+
+	& > ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+
+		& > li {
+			display: inline-block;
+			font-weight: 600;
+
+			& > a.active {
+				color: rgb(255, 213, 0);
+			}
+
+			& > a {
+				color: white;
+				text-decoration: none;
+				padding-left: 20px;
+				font-size: 1.125em;
+				text-transform: uppercase;
+				transition: 0.3s;
+
+				&:hover {
+					color: #ffe24f;
+					text-shadow: #2F3D7C 0px 0px 10px;
+				}
+			}
+
+		
+		}
+	}
+}
+
+/* Mobile menu bar */
+.mobile-menu {
+	display: flex;
+	position: fixed;
+	top: 80px;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #2F3D7C;
+	z-index: 10;
+	animation: slide-in 0.4s ease-in-out;
+
+	& > ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		float: right;
+		text-align: right;
+		flex-direction: column;
+		justify-content: center;
+		flex-grow: 1;
+
+		& > li {
+			display: block;
+			padding: 10px;
+			font-weight: 600;
+
+			& > a.active {
+				color: rgb(255, 213, 0);
+			}
+			
+			& > a {
+				color: white;
+				text-decoration: none;
+				font-size: 1.125em;
+				text-transform: uppercase;
+
+				&:hover {
+					color: #ffe24f;
+					text-shadow: #2F3D7C 0px 0px 10px;
+				}
+			}
+
+
+		}
+	}
+}
+/* Glidende inntredenseffekt, som kontrollerer beveglsen og formendringen til et element.*/
+@keyframes slide-in {
+	0% {
+		right: -100%;
+	}
+	100% {
+		right: 0;
+ 	}
+}
+
+/* Icon 4 hentet fra https://codepen.io/designcouch/pen/ExvwPY */
+#nav-icon {
+	display: none;
+	width: 40px;
+	height: 25px;
+	position: absolute;
+	right: 10px;
+	top: 22px;
+	background-color: transparent;
+	border: none;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+}
+
+/* Alle linjene i hamburgmenyen */
+#nav-icon span {
+	display: block;
+	position: absolute;
+	height: 7px;
+	width: 100%;
+	background: #ffffff;
+	border-radius: 9px;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+/* De tre linjene */
+#nav-icon span:nth-child(1) {
+	top: 0px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+#nav-icon span:nth-child(2) {
+	top: 14px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+#nav-icon span:nth-child(3) {
+	top: 28px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+
+/* De tre linjene når de er åpen */
+#nav-icon.open span:nth-child(1) {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: -3px;
+	left: 8px;
+}
+
+#nav-icon.open span:nth-child(2) {
+	width: 0%;
+	opacity: 0;
+}
+
+#nav-icon.open span:nth-child(3) {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	top: 25px;
+	left: 8px;
+}
+/* Forside bilde som dekker hele skjermen */
+.front {
+	width: 100%;
+	height: 100vh;
+	margin-bottom: 80px;
+	fill: cover;
+	z-index: -1;
+	background-image: url('../images/Oslomet_bygg_pilestredet.jpeg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: inherit;
+		background-color: rgba(0, 0, 0, 0.3);
+		z-index: 1;
+	}
+}
+/*Tekst oppå forside-bildet*/
+.front > h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #ffffff;
+	text-shadow: 2px 2px 4px black;
+	z-index: 1;
+}
+
+/* Scroll ned effekten er originalt fra https://codepen.io/TKS31/pen/gOaKaxx */
+.mouse {
+	color: transparent;
+	user-select: none;
+	width: 30px;
+	height: 60px;
+	border: 3px solid #fff;
+	border-radius: 60px;
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 2;
+	&:hover {
+		cursor: pointer;
+		border: 3px solid #ffd500;
+		&::before {
+			content: '';
+			width: 12px;
+			height: 12px;
+			position: absolute;
+			top: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #ffd500;
+			border-radius: 50%;
+			opacity: 1;
+			animation: wheel 1s infinite;
+		}
+	}
+
+	&::before {
+		content: '';
+		width: 12px;
+		height: 12px;
+		position: absolute;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: #fff;
+		border-radius: 50%;
+		opacity: 1;
+		animation: wheel 2s infinite;
+	}
+}
+/* Animasjonseffekt endres to egenskaper gradvis: opacity og top. */
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 40px;
+	}
+}
+
+/* Fullt innhold som er sentrert både horisontalt og vertikalt */
+.fullcontent {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/* Innhold som er sentrert horisontalt og vertikalt - men bare dekker 80% */
+.content {
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+/* Slik at vi kan endre content kun for denne siden */
+.tilgjengelig {
+	width: 50%;
+}
+
+.topical {
+	width: 70%;
+}
+
+/* plassere elementer i en rad med mellomrom mellom hvert element */
+.rad {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	justify-content: space-between;
+}
+
+/* plassere elementer i en kolonne med mellomrom mellom hvert element */
+.kolonne {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+/* Her har vi left and right, for å holde elementer på høyre/venstre side */
+.left {
+	display: flex;
+	align-items: flex-start;
+	text-align: left;
+}
+
+/* Justerer innhold til høyre med flexbox */
+.right {
+	display: flex;
+	align-items: flex-end;
+	text-align: right;
+}
+
+.center {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+/* Knapper */
+.btn {
+	background-color: #2F3D7C;
+	color: white;
+	padding: 15px;
+	font-size: 1.25em;
+	font-weight: 600;
+	text-align: center;
+	text-transform: uppercase;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: 0.3s;
+	text-decoration: none;
+
+	&:hover {
+		background-color: #ffd500;
+		color: black;
+	}
+}
+
+/* Forsiden bilde */
+.forsidebilde {
+	width: 500px;
+	height: 350px;
+	margin-left: 50px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+/* Tekstområdet innenfor toppseksjonen */
+.topical_tekst {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 70%;
+}
+
+/* Frontseksjonen med bakgrunnsbilde av kvantedatamaskiner */
+.tilgjengelighet_front {
+	background-image: url('../images/Kvantedatamaskiner_oslomet.jpeg');
+}
+
+/* Frontseksjonen med bakgrunnsbilde av AI og mennesker */
+.topical_front {
+	background-image: url('../images/AI_and_human.png');
+}
+
+/* Boks med bilde */
+.bilde_boks {
+	background-color: #2F3D7C;
+	align-content: center;
+	width: 100%;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	/* Bilde har kolonner og rader */
+	& > .kolonne > .rad > img {
+		width: 600px;
+		height: 400px;
+		border-radius: 10px;
+	}
+}
+
+/* Figur med kolonneoppsett */
+.figure {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 8px;
+	color: #fff;
+	& > img {
+		object-fit: cover;
+		height: 300px;
+		width: 450px;
+		border-radius: 10px;
+		&:hover {
+			transition: 0.3s;
+			transform: scale(1.2);
+		}
+	}
+
+}
+
+/* Tegning med grensesnittselementer */
+.tegning {
+	border: 5px solid #2F3D7C;
+	border-radius: 3px;
+	margin-bottom: 20px;
+}
+
+/* Tilpasse siden til mobil */
+@media screen and (max-width: 768px) {
+	footer {
+		width: 100%;
+		height: 120px;
+		& > div {
+			text-align: center;
+			max-width: 90%;
+		}
+	}
+
+	/* Navbar */
+
+	.list {
+		display: none;
+	}
+
+	.mobile-menu {
+		display: block;
+	}
+
+	#nav-icon {
+		display: block;
+	}
+
+	/* Globale verdier */
+
+	.kolonne {
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	.rad {
+		flex-direction: column-reverse;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	.btn {
+		width: 80%;
+	}
+
+	.content {
+		width: 90%;
+	}
+
+	/* Forside */
+
+	.forsidebilde {
+		width: 100%;
+		height: 300px;
+		margin-left: 0;
+	}
+
+	/* Topical siden */
+	.topical_tekst {
+		width: 90%;
+		& > div > p {
+			overflow: hidden;
+			word-wrap: break-word;
+		}
+	}
+
+	/* Tilgjengelighet */
+	.bilde_boks {
+		display: flex;
+		align-items: center;
+		& > .kolonne > .rad {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	.figure {
+		justify-content: center;
+		align-items: center;
+		& > img {
+			width: 95%;
+			height: auto;
+		}
+	}
+}
+
+img:hover{
+	transition: 0.3s;
+	transform: scale(1.025);
+}
