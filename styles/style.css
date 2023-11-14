@@ -571,7 +571,11 @@ nav {
 	}
 }
 
-img:hover{
-	transition: 0.3s;
+img {
+	transition: 0.3s linear;
+	transform: scale(1);
+}
+
+img:hover {
 	transform: scale(1.025);
 }
