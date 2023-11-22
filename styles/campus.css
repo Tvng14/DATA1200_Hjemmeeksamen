@@ -144,6 +144,8 @@ footer {
 }
 /* Videocontainer som dekker hele skjermen. */
 .video_container {
+	display: flex;
+	justify-content: center;
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -188,6 +190,13 @@ footer {
 		opacity: 1;
 		animation: wheel 2s infinite;
 	}
+}
+.scroll-text {
+	color: #fff;
+	text-shadow: 2px 2px 4px black;
+	position: absolute;
+	bottom: 80px;
+	font-weight: 500;
 }
 @keyframes wheel {
 	to {
