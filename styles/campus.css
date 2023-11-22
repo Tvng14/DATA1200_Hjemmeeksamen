@@ -278,14 +278,14 @@ footer {
 	}
 
 	& span {
-		background-image: url('/images/link.svg');
+		background-image: url('../images/link.svg');
 		width: 18px;
 		height: 18px;
 		margin-left: 10px;
 	}
 
 	& a:hover > span {
-		background-image: url('/images/link_hover.svg');
+		background-image: url('../images/link_hover.svg');
 	}
 
 	& a {
@@ -320,14 +320,14 @@ footer {
 	}
 
 	& span {
-		background-image: url('/images/link.svg');
+		background-image: url('../images/link.svg');
 		width: 18px;
 		height: 18px;
 		margin-left: 10px;
 	}
 
 	& a:hover > span {
-		background-image: url('/images/link_hover.svg');
+		background-image: url('../images/link_hover.svg');
 	}
 
 	& a {
