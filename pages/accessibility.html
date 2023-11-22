@@ -1,17 +1,11 @@
-<!-- Short presentation of accessibility for your site. Test your site with an automated test. 
-    Write a very short text (about 400-500 words) about how you tested the code for 
-    accessibility using this automated test. Tell us how you checked, and coding choices 
-    you made for universal design beyond what an automated test could tell you. 
-    You are recommended to use screenshots from the testing site 
-    and of your code lack of images may affect your score. -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Universell tilgjengelighet">
         <!-- Favicon av OsloMet, Company: OsloMet, Kilde:https://ansatt.oslomet.no/logo-visuell-profil-->
-        <link rel="icon" type="image/png" href="../images/OsloMet_favicon.png"/>
+        <link rel="icon" type="image/png" href="/images/oslomet_favicon.webp">
         <title>Tilgjengelighet</title>
         <link rel="stylesheet" href="../styles/style.css">
     </head>
@@ -19,6 +13,7 @@
     <!-- Navigasjonsbar -->
     <nav>
         <a href="../index.html">Eksamen</a>
+        <a class="skip" href="#content">Skip to content</a>
         <button id="nav-icon" onclick="endreVisning()"><span></span><span></span><span></span></button>
         <div class="list" id="navbar">
             <ul>
@@ -27,16 +22,16 @@
                 <li><a href="topical.html">Topical</a></li>
                 <li><a href="campus.html">Campus</a></li>
             </ul>
-        <div>
+        </div>
     </nav>
     <!-- Dekke hele skjermen med frontbilde -->
     <div class="tilgjengelighet_front front" id="front">
         <h1>Tilgjengelighet</h1>
-        <!-- Klikk for å komme til content action -->
+        <span class="scroll-text">Scroll</span>
         <a href="#content" class="mouse">Scroll</a>
     </div>
-    <div class="fullcontent">
-        <div class="content tilgjengelig" id="content">
+    <div class="fullcontent" id="content">
+        <div class="content tilgjengelig">
             <!-- Innhold -->
             <div>
                 <h2>Universiell tilgjengelighet</h2>
@@ -69,7 +64,8 @@
                     vi alltid i bakhodet at den også skal fungere og se bra ut på en mobil-skjerm. Derfor
                     lagde vi en hamburger-meny slik at den ser mer ryddig ut for mobil-brukere og for folk som 
                     liker å minimere browseren sin. Vi har også lagt inn slik at når man holder musen over 
-                    menyen til Campus, vil den endre farge til gult som gjør knappen synligere.   
+                    menyen til Campus, vil den endre farge til gult som gjør knappen synligere. 
+                    I tillegg har vi tatt hensyn til de som ikke kan bruke en mus eller touchbar, så derfor har vi lagt tiltab-index.
                 </p>
             </div>
             <div>
@@ -103,26 +99,30 @@
                 <!-- Førtste raden av bilder-->
                 <div class="rad">
                     <!--Bilder av automated test er lagt inn i figure-->
-                    <div class="figure">
-                        <img src="/images/index_test.png" alt="bilde">
+                    <figure class="figure">
+                        <!-- Foto: tatt av oss -->
+                        <img src="/images/indekssjekk.png" alt="Test av forsiden">
                         <!--- Brukt taggen <em> for å gjøre caption mer tydelig -->
                         <figcaption><em> Figur 1: Hjem-siden</em></figcaption>
-                    </div>
-                    <div class="figure">
-                        <img src="/images/tilgjengelighet_automated_test.png" alt="bilde">
+                    </figure>
+                    <figure class="figure">
+                        <!-- Foto: tatt av oss -->
+                        <img src="/images/tilgjengelighetstsjekk.png" alt="Test av denne siden">
                         <figcaption><em>Figur 2: Tilgjengelighet-siden</em></figcaption>
-                    </div>
+                    </figure>
                 </div>
                 <!-- Andre raden av bilder-->
                 <div class="rad">
-                    <div class="figure">
-                        <img src="/images/topical_test.png" alt="bilde">
+                    <figure class="figure">
+                        <!-- Foto: tatt av oss -->
+                        <img src="/images/topicalsjekk.png" alt="Test av topical siden">
                         <figcaption><em>Figur 3: Topical-siden</em></figcaption>
-                    </div>
-                    <div class="figure">
-                        <img src="/images/campus_test.png" alt="bilde">
+                    </figure>
+                    <figure class="figure">
+                        <!-- Foto: tatt av oss -->
+                        <img src="/images/campussjekk.png" alt="Test av campus siden">
                         <figcaption><em>Figur 4: Campus-siden</em></figcaption>
-                    </div>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -139,7 +139,8 @@
                     og samtidig var realistisk og simpel å gjennomføre (Bilde nedenfor).
                 </p>
             </div>
-            <img class="tegning" src="/images/Layout_tegning.png" alt="Sketch-tegning av layouten"/>
+            <!-- Foto: tatt av oss -->
+            <img class="tegning" src="/images/layout_tegning.png" alt="Sketch-tegning av layouten">
         </div>
         <a href="#front" class="btn">Gå til toppen</a>
     </div>

@@ -1,5 +1,4 @@
 /* Globale CSS tags */
-
 /* Fjerne whitelines og legge til font */
 body, html {
 	margin: 0;
@@ -8,38 +7,6 @@ body, html {
 	scroll-behavior: smooth;
 	line-height: 1.5;
 }
-/* Vi har brukt "em" til font-size for å gjøre
-	tekststørrelsen skalerbar. */
-h1 {
-	font-size: 3.125em;
-	font-weight: 600;
-}
-
-h2 {
-	font-size: 1.875em;
-	font-weight: 600;
-}
-
-p {
-	font-size: 1.25em;
-	font-weight: 400;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-}
-
-/* Inneholde informasjonen som vises nederst på siden.*/
-footer {
-	background-color: #2F3D7C;
-	color: white;
-	height: 80px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;	
-	word-spacing: 10px;
-	margin-top: 80px; /* Lager mellomrom fra hovedinnholdet til footer */
-}
-
 /* Navbar */
 nav {
 	position: fixed;
@@ -51,59 +18,104 @@ nav {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	& > a {
+	& a {
 		text-decoration: none;
 		color: white;
-		font-size: 1.875em;
+		font-size: 25px;
 		font-weight: 600;
 		text-transform: uppercase;
-
 		&:hover {
 			color: #ffd500;
 		}
 	}
 }
+/* Vi har brukt "em" til font-size for å gjøretekststørrelsen skalerbar. */
+h1 {
+	font-size: 50px;
+	font-weight: 600;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #ffffff;
+	text-shadow: 2px 2px 4px black;
+	z-index: 1;
+}
+
+h2 {
+	font-size: 25px;
+	font-weight: 600;
+}
+
+p {
+	font-size: 20px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+}
+
+img {
+	transition: 0.3s linear;
+	transform: scale(1);
+}
+img:hover {
+	transform: scale(1.025);
+}
+/* Inneholder informasjonen som vises nederst på siden. */
+footer {
+	background-color: #2F3D7C;
+	color: white;
+	height: 80px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	word-spacing: 10px;
+	margin-top: 80px;
+}
+/* Skip to content for de som ikke har mus*/
+.skip {
+	height: 30px;
+	padding: 4px;
+	font-size: 18px;
+	transform: translateX(-400%);
+	transition: transform 0.3s;
+}
+.skip:focus {
+	transform: translateX(10%);
+}
 /* Navbar liste */
 .list {
 	width: 72.5%;
 	display: flex;
-	justify-content: right;
+	justify-content: flex-end;
 	align-items: center;
-
-	& > ul {
+	& a {
+		color: white;
+		text-decoration: none;
+		padding-left: 20px;
+		font-size: 20px;
+		text-transform: uppercase;
+		transition: 0.3s;
+		&:hover {
+			color: #ffe24f;
+			text-shadow: #2F3D7C 0px 0px 10px;
+		}
+	}
+	& ul {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
-
-
-		& > li {
-			display: inline-block;
-			font-weight: 600;
-
-			& > a.active {
-				color: rgb(255, 213, 0);
-			}
-
-			& > a {
-				color: white;
-				text-decoration: none;
-				padding-left: 20px;
-				font-size: 1.125em;
-				text-transform: uppercase;
-				transition: 0.3s;
-
-				&:hover {
-					color: #ffe24f;
-					text-shadow: #2F3D7C 0px 0px 10px;
-				}
-			}
-
-		
+	}
+	& li {
+		display: inline-block;
+		font-weight: 600;
+		& > a.active {
+			color: rgb(255, 213, 0);
 		}
 	}
 }
-
 /* Mobile menu bar */
 .mobile-menu {
 	display: flex;
@@ -115,40 +127,32 @@ nav {
 	background-color: #2F3D7C;
 	z-index: 10;
 	animation: slide-in 0.4s ease-in-out;
-
-	& > ul {
+	& ul {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
-		display: flex;
 		float: right;
 		text-align: right;
 		flex-direction: column;
 		justify-content: center;
 		flex-grow: 1;
-
-		& > li {
-			display: block;
-			padding: 10px;
-			font-weight: 600;
-
-			& > a.active {
-				color: rgb(255, 213, 0);
-			}
-			
-			& > a {
-				color: white;
-				text-decoration: none;
-				font-size: 1.125em;
-				text-transform: uppercase;
-
-				&:hover {
-					color: #ffe24f;
-					text-shadow: #2F3D7C 0px 0px 10px;
-				}
-			}
-
-
+	}
+	& li {
+		display: block;
+		padding: 10px;
+		font-weight: 600;
+		& > a.active {
+			color: rgb(255, 213, 0);
+		}
+	}
+	& a {
+		color: white;
+		text-decoration: none;
+		font-size: 23px;
+		text-transform: uppercase;
+		&:hover {
+			color: #ffe24f;
+			text-shadow: #2F3D7C 0 0 10px;
 		}
 	}
 }
@@ -159,9 +163,8 @@ nav {
 	}
 	100% {
 		right: 0;
- 	}
+	}
 }
-
 /* Icon 4 hentet fra https://codepen.io/designcouch/pen/ExvwPY */
 #nav-icon {
 	display: none;
@@ -172,6 +175,7 @@ nav {
 	top: 22px;
 	background-color: transparent;
 	border: none;
+	-ms-transform: rotate(0deg);
 	-webkit-transform: rotate(0deg);
 	-moz-transform: rotate(0deg);
 	-o-transform: rotate(0deg);
@@ -182,7 +186,6 @@ nav {
 	transition: .5s ease-in-out;
 	cursor: pointer;
 }
-
 /* Alle linjene i hamburgmenyen */
 #nav-icon span {
 	display: block;
@@ -193,6 +196,7 @@ nav {
 	border-radius: 9px;
 	opacity: 1;
 	left: 0;
+	-ms-transform: rotate(0deg);
 	-webkit-transform: rotate(0deg);
 	-moz-transform: rotate(0deg);
 	-o-transform: rotate(0deg);
@@ -204,7 +208,8 @@ nav {
 }
 /* De tre linjene */
 #nav-icon span:nth-child(1) {
-	top: 0px;
+	top: 0;
+	-ms-transform-origin: left center;
 	-webkit-transform-origin: left center;
 	-moz-transform-origin: left center;
 	-o-transform-origin: left center;
@@ -212,6 +217,7 @@ nav {
 }
 #nav-icon span:nth-child(2) {
 	top: 14px;
+	-ms-transform-origin: left center;
 	-webkit-transform-origin: left center;
 	-moz-transform-origin: left center;
 	-o-transform-origin: left center;
@@ -219,14 +225,15 @@ nav {
 }
 #nav-icon span:nth-child(3) {
 	top: 28px;
+	-ms-transform-origin: left center;
 	-webkit-transform-origin: left center;
 	-moz-transform-origin: left center;
 	-o-transform-origin: left center;
 	transform-origin: left center;
 }
-
 /* De tre linjene når de er åpen */
 #nav-icon.open span:nth-child(1) {
+	-ms-transform: translate(45deg);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
@@ -234,13 +241,12 @@ nav {
 	top: -3px;
 	left: 8px;
 }
-
 #nav-icon.open span:nth-child(2) {
-	width: 0%;
+	width: 0;
 	opacity: 0;
 }
-
 #nav-icon.open span:nth-child(3) {
+	-ms-transform: translate(-45deg);
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
@@ -250,37 +256,25 @@ nav {
 }
 /* Forside bilde som dekker hele skjermen */
 .front {
+	display: flex;
+	justify-content: center;
 	width: 100%;
 	height: 100vh;
-	margin-bottom: 80px;
-	fill: cover;
 	z-index: -1;
-	background-image: url('../images/Oslomet_bygg_pilestredet.jpeg');
+	background-image: url('../images/oslomet_bygg_pilestredet.webp');
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-
 	&::before {
 		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
 		height: inherit;
 		background-color: rgba(0, 0, 0, 0.3);
 		z-index: 1;
 	}
-}
-/*Tekst oppå forside-bildet*/
-.front > h1 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: #ffffff;
-	text-shadow: 2px 2px 4px black;
-	z-index: 1;
 }
 
 /* Scroll ned effekten er originalt fra https://codepen.io/TKS31/pen/gOaKaxx */
@@ -296,24 +290,6 @@ nav {
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 2;
-	&:hover {
-		cursor: pointer;
-		border: 3px solid #ffd500;
-		&::before {
-			content: '';
-			width: 12px;
-			height: 12px;
-			position: absolute;
-			top: 10px;
-			left: 50%;
-			transform: translateX(-50%);
-			background-color: #ffd500;
-			border-radius: 50%;
-			opacity: 1;
-			animation: wheel 1s infinite;
-		}
-	}
-
 	&::before {
 		content: '';
 		width: 12px;
@@ -327,6 +303,20 @@ nav {
 		opacity: 1;
 		animation: wheel 2s infinite;
 	}
+	&:hover {
+		cursor: pointer;
+		border: 3px solid #ffd500;
+		&::before {
+			background-color: #ffd500;
+		}
+	}
+}
+.scroll-text {
+	color: #fff;
+	text-shadow: 2px 2px 4px black;
+	position: absolute;
+	bottom: 80px;
+	font-weight: 500;
 }
 /* Animasjonseffekt endres to egenskaper gradvis: opacity og top. */
 @keyframes wheel {
@@ -335,16 +325,15 @@ nav {
 		top: 40px;
 	}
 }
-
 /* Fullt innhold som er sentrert både horisontalt og vertikalt */
 .fullcontent {
+	padding-top: 80px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
-
 /* Innhold som er sentrert horisontalt og vertikalt - men bare dekker 80% */
 .content {
 	width: 80%;
@@ -352,16 +341,6 @@ nav {
 	justify-content: center;
 	flex-direction: column;
 }
-
-/* Slik at vi kan endre content kun for denne siden */
-.tilgjengelig {
-	width: 50%;
-}
-
-.topical {
-	width: 70%;
-}
-
 /* plassere elementer i en rad med mellomrom mellom hvert element */
 .rad {
 	display: flex;
@@ -369,7 +348,6 @@ nav {
 	gap: 20px;
 	justify-content: space-between;
 }
-
 /* plassere elementer i en kolonne med mellomrom mellom hvert element */
 .kolonne {
 	display: flex;
@@ -378,28 +356,23 @@ nav {
 	align-items: center;
 	gap: 20px;
 }
-
-/* Her har vi left and right, for å holde elementer på høyre/venstre side */
+/* Klasser for å justere til venstre, høyre og venstre */
 .left {
 	display: flex;
 	align-items: flex-start;
 	text-align: left;
 }
-
-/* Justerer innhold til høyre med flexbox */
 .right {
 	display: flex;
 	align-items: flex-end;
 	text-align: right;
 }
-
 .center {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 }
-
-/* Knapper */
+/* Knapp */
 .btn {
 	background-color: #2F3D7C;
 	color: white;
@@ -412,13 +385,16 @@ nav {
 	cursor: pointer;
 	transition: 0.3s;
 	text-decoration: none;
-
 	&:hover {
 		background-color: #ffd500;
 		color: black;
 	}
 }
-
+@media (max-width: 900px) {
+	.btn {
+		align-self: center;
+	}
+}
 /* Forsiden bilde */
 .forsidebilde {
 	width: 500px;
@@ -427,7 +403,13 @@ nav {
 	object-fit: cover;
 	border-radius: 10px;
 }
-
+/* Slik at vi kan endre content kun for denne siden */
+.tilgjengelig {
+	width: 50%;
+}
+.topical {
+	width: 70%;
+}
 /* Tekstområdet innenfor toppseksjonen */
 .topical_tekst {
 	display: flex;
@@ -435,17 +417,14 @@ nav {
 	align-items: flex-start;
 	width: 70%;
 }
-
 /* Frontseksjonen med bakgrunnsbilde av kvantedatamaskiner */
 .tilgjengelighet_front {
-	background-image: url('../images/Kvantedatamaskiner_oslomet.jpeg');
+	background-image: url('../images/kvantedatamaskiner_oslomet.webp');
 }
-
 /* Frontseksjonen med bakgrunnsbilde av AI og mennesker */
 .topical_front {
-	background-image: url('../images/AI_and_human.png');
+	background-image: url('../images/ai_and_human.png');
 }
-
 /* Boks med bilde */
 .bilde_boks {
 	background-color: #2F3D7C;
@@ -453,14 +432,12 @@ nav {
 	width: 100%;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-	/* Bilde har kolonner og rader */
-	& > .kolonne > .rad > img {
+	& img {
 		width: 600px;
 		height: 400px;
 		border-radius: 10px;
 	}
 }
-
 /* Figur med kolonneoppsett */
 .figure {
 	display: flex;
@@ -469,7 +446,7 @@ nav {
 	align-items: flex-start;
 	gap: 8px;
 	color: #fff;
-	& > img {
+	& img {
 		object-fit: cover;
 		height: 300px;
 		width: 450px;
@@ -479,43 +456,38 @@ nav {
 			transform: scale(1.2);
 		}
 	}
-
 }
-
 /* Tegning med grensesnittselementer */
 .tegning {
 	border: 5px solid #2F3D7C;
 	border-radius: 3px;
 	margin-bottom: 20px;
 }
-
 /* Tilpasse siden til mobil */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
+	/* Navbar */
+	.skip {
+		display: none;
+	}
+	.list {
+		display: none;
+	}
+	.mobile-menu {
+		display: block;
+	}
+	#nav-icon {
+		display: block;
+	}
+	/* Footer */
 	footer {
 		width: 100%;
 		height: 120px;
-		& > div {
+		& div {
 			text-align: center;
 			max-width: 90%;
 		}
 	}
-
-	/* Navbar */
-
-	.list {
-		display: none;
-	}
-
-	.mobile-menu {
-		display: block;
-	}
-
-	#nav-icon {
-		display: block;
-	}
-
 	/* Globale verdier */
-
 	.kolonne {
 		flex-direction: column;
 		flex-wrap: wrap;
@@ -525,57 +497,42 @@ nav {
 		flex-wrap: wrap;
 		align-items: center;
 	}
-
 	.btn {
 		width: 80%;
 	}
-
 	.content {
 		width: 90%;
 	}
-
 	/* Forside */
-
 	.forsidebilde {
 		width: 100%;
 		height: 300px;
 		margin-left: 0;
 	}
-
 	/* Topical siden */
 	.topical_tekst {
 		width: 90%;
-		& > div > p {
+		& p {
 			overflow: hidden;
 			word-wrap: break-word;
 		}
 	}
-
 	/* Tilgjengelighet */
 	.bilde_boks {
 		display: flex;
 		align-items: center;
-		& > .kolonne > .rad {
+		& .rad {
 			display: flex;
 			justify-content: center;
+			flex-direction: row-reverse; /* Slik at figurene vises i riktig rekkefølge */
 		}
 	}
-
 	.figure {
 		justify-content: center;
 		align-items: center;
-		& > img {
+		& img {
 			width: 95%;
 			height: auto;
 		}
 	}
-}
-
-img {
-	transition: 0.3s linear;
-	transform: scale(1);
-}
-
-img:hover {
-	transform: scale(1.025);
 }
